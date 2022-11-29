@@ -152,7 +152,7 @@
                                             <div class="d-flex">
                                                 <input class="form-check-input ms-2 me-3" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
                                                 <label class="form-check-label me-3" for="inlineRadio3">Enter the Days </label>
-                                                <input type="text" class="w-50 m-0 align-self-center" id="days" name="days" value="" size="30" maxlength="2">
+                                                <input type="text" class="w-50 m-0 align-self-center" id="days" name="days" value="" size="30" maxlength="2" onblur="rangechanged();" oninput="isValidNum(this.value)">
                                             </div>
                                         </div>
                                     </div>
@@ -168,59 +168,47 @@
                                     </div>
                                 </div>
                                 <!--/ ranger -->
-<script>
-    function rangechanged(t){
-        var loanamt = $(t).val();
-        if(loanamt< 7000){
-            $('#inlineRadio3').prop("checked", true);
-        }else if(loanamt > 15000){
-            $('#inlineRadio1').prop("checked", true);
-        }else{
-            $('#inlineRadio2').prop("checked", true);
-        }       
 
-    }
-    function isValidNum(n) {
-  if (!isNaN(parseFloat(n)) && isFinite(n) && n<=50) 
-      //do something
-}
-</script>
                                 <div class="priceItem py-2 mb-2 border-bottom">
                                     <p class="d-flex justify-content-between">
                                         <span>Total Loan Amount</span>
-                                        <span>Rs: 10,000.00</span>
+                                        <span id="totamt">Rs: 10,000.00</span>
+                                        <input name="loanamt_actuval" value="" id="input_loanamt" type="hidden" />
                                     </p>
                                 </div>
 
-                                <div class="priceItem py-2 mb-2 border-bottom">
-                                    <p class="d-flex justify-content-between">
-                                        <span>Payble  Amount</span>
-                                        <span>Rs: 10,250.00</span>
-                                    </p>
-                                </div>
+                                
 
-                                <div class="priceItem py-2 mb-2 border-bottom">
+                                <!-- <div class="priceItem py-2 mb-2 border-bottom">
                                     <p class="d-flex justify-content-between">
                                         <span>You will pay Extra Amount</span>
                                         <span>Rs: 2,250.00</span>
                                     </p>
-                                </div>
+                                </div> -->
 
                                 <div class="priceItem py-2 mb-2 border-bottom">
                                     <p class="d-flex justify-content-between">
                                         <span>Bank Interest Rate</span>
-                                        <span>8.5%</span>
+                                        <span id="intrest"></span>
                                     </p>
                                 </div>
 
                                 <div class="priceItem py-2 mb-2 border-bottom">
                                     <p class="d-flex justify-content-between">
-                                        <span>Processing Fee</span>
-                                        <span>1.5%</span>
+                                        <span id="">Processing Fee</span>
+                                        <span id="processing_fee_text"></span>
+                                        <span id="processing_fee">1.5%</span>
+                                        <input type="hidden" name="processing_fee" id="input_processing_fee" value="" />
                                     </p>
                                 </div>
-
-                                <div class="row justify-content-center py-4">
+                                <div class="priceItem py-2 mb-2 border-bottom">
+                                    <p class="d-flex justify-content-between">
+                                        <span> Total Payble Amount</span>
+                                        <span id="tpayableamt"></span>
+                                        <input name="payableamt" value="" id="input_tpayableamt" type="hidden" />
+                                    </p>
+                                </div>
+                                <!-- <div class="row justify-content-center py-4">
                                     <div class="col-md-8 text-center">
                                             <div class="d-flex justify-content-center">
                                                 <div>
@@ -228,11 +216,11 @@
                                                     <small>Per month</small>
                                                 </div>
                                                 <div class="ps-4">
-                                                    <h1 class="h1 fbold">Rs: 2,882</h1>                                        
+                                                    <h1 class="h1 fbold"></h1>                                        
                                                 </div>
                                             </div>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 
                                 <div class="acceptterms pb-3">
@@ -248,7 +236,7 @@
                                 </div>
 
                                   <!-- table -->
-                            <div class="table-responsive customTable">
+                             <div class="table-responsive customTable">
                                 <table class="table table-striped table-hover repayloan">
                                     <thead>
                                         <tr>
@@ -256,18 +244,11 @@
                                         <th scope="col">Monthly EMI Amount</th>                                       
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>                                          
-                                            <td><input type="radio"><span class="d-inline-block ps-2"  name="inlineRadioOptions" id="inlineRadio3" value="option1">2 Months</span></td>
-                                            <td><label for="inlineRadio3">Rs: 5455.00</label></td>                                           
-                                        </tr>  
-                                         <tr>                                          
-                                            <td><input type="radio"><span class="d-inline-block ps-2"  name="inlineRadioOptions" id="inlineRadio4" value="option2">4 Months</span></td>
-                                            <td><label for="inlineRadio4">Rs: 2455.00</label></td>                                           
-                                        </tr>                                      
+                                    <tbody id="monthlyemi">
+                                                                             
                                     </tbody>
                                 </table>
-                            </div>
+                            </div> 
                             <!--/ table -->
 
                                 <button class="btnCustom">Apply Now</button>
@@ -285,6 +266,7 @@
 
     </main>
     <!--/ main --> 
+
      <!-- footer -->
     <footer>
         <!-- top section -->
@@ -481,6 +463,107 @@
         output.innerHTML = this.value;
         }
     </script>
+    <script>
+        rangechanged();
+    function rangechanged(){
+
+        var loanamt = $('#myRange').val();
+        var processing_fee = 10/100;//persent
+        var processing_fee_amt = loanamt * processing_fee;
+        var emi_intrest = 2.5; 
+        var dayloan_intrest = 3.5; 
+        $('#totamt').html(loanamt);
+        $('#input_loanamt').val(loanamt);
+        loanamt* 10/100;
+        $('#processing_fee_text').html("10% : ");
+        $('#input_processing_fee').val(processing_fee_amt);
+        $('#processing_fee').html(processing_fee_amt);
+        
+
+        if(loanamt< 7000){
+            //third radio
+            $('#inlineRadio3').prop("checked", true);
+            $('#inlineRadio3').prop("disabled", false);
+            $('#days').prop("disabled", false);
+            $('#inlineRadio1').prop("disabled", true);
+            $('#inlineRadio2').prop("disabled", true);
+
+            var intrest = 3.5/100;//0.035---->30 1---?
+            
+            var days = $('#days').val();
+            if(days==''){days = 30;}
+            var intrestdays = days/30*0.035;
+
+
+            var payableamt = (parseInt(loanamt)+parseInt(loanamt * intrestdays)+parseInt(processing_fee_amt));
+             $('#tpayableamt').html("Rs. "+payableamt);
+            var str = '<tr><td><input type="radio"><span class="d-inline-block ps-2"  name="inlineRadioOptions" id="inlineRadio3" value="option1">First Month</span></td><td><label for="inlineRadio3">Rs:'+payableamt+'</label><input type="hidden" name="payableamt[]" value="'+payableamt+'"></td></tr>';
+            $('#monthlyemi').html(str);
+            $('#intrest').html('3.5%');
+        }else if(loanamt > 15000){
+            //first radio
+            $('#inlineRadio1').prop("checked", true);
+            $('#inlineRadio1').prop("disabled", false);
+            $('#inlineRadio2').prop("disabled", true);
+            $('#inlineRadio3').prop("disabled", true);
+            $('#days').prop("disabled", true);
+            var intrest = 2.5/100;
+
+            var splits =3;
+            var split1 = loanamt*(50/100);
+            var split2 = loanamt*(30/100);
+            var split3 = loanamt*(20/100);
+
+            var payableamt1 = parseInt(split1)+parseInt(loanamt * intrest)+parseInt(processing_fee_amt);
+            var payableamt2 = parseInt(split2)+parseInt(loanamt * intrest);
+
+            var intrestdays = 35/30*0.025;
+
+            var payableamt3 = parseInt(split3)+parseInt(loanamt * intrestdays);
+
+            
+            var str = '<tr><td><input type="radio"><span class="d-inline-block ps-2"  name="inlineRadioOptions" id="inlineRadio3" value="option1">First Month</span></td><td><label for="inlineRadio3">Rs:'+payableamt1+'</label><input type="hidden" name="payableamt[]" value="'+payableamt1+'"></td></tr><tr><td><input type="radio"><span class="d-inline-block ps-2"  name="inlineRadioOptions" id="inlineRadio3" value="option1">second Month</span></td><td><label for="inlineRadio3">Rs:'+payableamt2+'</label><input type="hidden" name="payableamt[]" value="'+payableamt2+'"></td></tr><tr><td><input type="radio"><span class="d-inline-block ps-2"  name="inlineRadioOptions" id="inlineRadio3" value="option1">Third Month</span></td><td><label for="inlineRadio3">Rs:'+payableamt3+'</label><input type="hidden" name="payableamt[]" value="'+payableamt3+'"></td></tr>';
+            $('#monthlyemi').html(str);
+            $('#tpayableamt').html("Rs. "+parseInt(payableamt1+payableamt2+payableamt3));
+
+            $('#intrest').html('2.5%');
+        }else{
+            //second radio
+            $('#inlineRadio2').prop("checked", true);
+            $('#inlineRadio2').prop("disabled", false);
+            $('#inlineRadio3').prop("disabled", true);
+            $('#inlineRadio1').prop("disabled", true);
+            $('#days').prop("disabled", true);
+           var intrest = 2.5/100;
+            var splits =2;
+            var split1 = loanamt *60/100;
+            var split2 = loanamt *40/100;
+            var payableamt1 = split1+(loanamt * intrest)+processing_fee_amt;
+            var intrestdays = 35/30*0.025;
+            var payableamt2 = split2+(loanamt * intrestdays);
+            $('#payableamt').html("<div id='3splitfirst' class=''>First Instalment : "+ payableamt1 + "</div><div id='3splitsecond' class=''>Second Instalment : "+ payableamt2 + "</div><input type='hidden' name='payableamt[]' value='"+payableamt1+"'><input type='hidden' name='payableamt[]' value='"+payableamt2+"'>");
+            var str = '<tr><td><input type="radio"><span class="d-inline-block ps-2"  name="inlineRadioOptions" id="inlineRadio3" value="option1">First Month</span></td><td><label for="inlineRadio3">Rs:'+payableamt1+'</label><input type="hidden" name="payableamt[]" value="'+payableamt1+'"></td></tr><tr><td><input type="radio"><span class="d-inline-block ps-2"  name="inlineRadioOptions" id="inlineRadio3" value="option1">Second Month</span></td><td><label for="inlineRadio3">Rs:'+payableamt2+'</label><input type="hidden" name="payableamt[]" value="'+payableamt2+'"></td></tr>';
+            $('#monthlyemi').html(str);
+            $('#tpayableamt').html("Rs. "+parseInt(payableamt1+payableamt2));
+
+            $('#intrest').html('2.5%');
+        }        
+          
+
+    }
+    function isValidNum(n) {
+  if (!isNaN(parseFloat(n)) && isFinite(n) && n<=30) {
+      //alert('if'+n);
+  }else{
+    //alert('else'+n);
+    if(n){
+        $('#days').val('30');
+    }
+    
+  }
+  rangechanged();
+}
+</script>
 </body>
 
 </html>
