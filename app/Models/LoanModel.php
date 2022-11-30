@@ -46,9 +46,9 @@ class LoanModel extends Model{
        
         $home = new home();
       // print_r(json_encode($data));
-       echo $url = baseURL1.'/loan/Approve_reject_user_loan';//exit;
+       $url = baseURL1.'/loan/Approve_reject_user_loan';//exit;
 
-        $result = $home->CallAPI('POST',$url,$data);
+       return $result = $home->CallAPI('POST',$url,$data);
        print_r($result);exit;
       
     }

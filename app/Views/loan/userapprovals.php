@@ -68,7 +68,7 @@ foreach($result as $r){ //print_r($r);?>
 					</div>
 					<div class="btn btn-sm btn-danger" onclick="Approverejectuser('1','<?php echo $r->loan_id;?>');">Reject
 					</div>
-				<?php }else if($r->admin_approved_status==1){ ?>
+				<?php }else if($r->admin_approved_status==0){ ?>
 					<div class="btn btn-sm btn-primary" onclick="Approverejectuser('1','<?php echo $r->loan_id;?>');">Approve
 					</div>
 
@@ -93,20 +93,20 @@ foreach($result as $r){ //print_r($r);?>
 	function Approverejectuser(admin_approved_status,uid){
 		var uemail ='';
 		
-		admin_approved_statustext = admin_approved_status==1?'Approve':'Reject';
+		admin_approved_statustext = admin_approved_status==0?'Approve':'Reject';
 		admin_approved_statuscls = admin_approved_status==0?'btn-primary':'btn-danger';
 		numadmin_approved_status = admin_approved_status?'0':'1';
 		$.ajax({
-		   method: "POST",
-		  
+		   method: "POST",		  
            dataType: "json",            
 		   url: "<?php echo base_url(); ?>/approverejectuserloan",
-		   data: {"loan_id":uid,"admin_approved_status":admin_approved_status,"modified_by":"1"},		   
+		   data:{"loan_id":uid,"admin_approved_status":admin_approved_status,"modified_by":"1"},		   
 		   success: function(result) {        
-
+console.log(result);
+console.log(result.status);
 	         if(result){
-	         	var obj = jQuery.parseJSON(result);
-	         	console.log(obj.status);
+	         	//var obj = jQuery.parseJSON(result);
+	         	//console.log(obj.status);
 		       // if(obj.status==200 && ){}
 		     	$('#admin_approved_status_'+uid).html('<div class="btn btn-sm '+admin_approved_statuscls+'" onclick="Approverejectuser('+numadmin_approved_status+','+uid+');">'+admin_approved_statustext+'</div>');
 		        //$('#alert_message').html(obj.message);

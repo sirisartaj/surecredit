@@ -54,24 +54,21 @@ abstract class BaseController extends Controller
        try{
        // echo $url;
         //print_r($data);
-        //echo $method;//exit;
+        //echo $method;exit;
         //define('RESTAPYKEY',urldecode('78e7fc94-0169-4b9a-994d-5e402cfbb01'));
       $curl = curl_init();
       switch ($method){
         case "POST":
-
-          curl_setopt($curl, CURLOPT_POST, true);
-          if ($data) {
-           if(!$data['user_id']){ $data['user_id'] = "1"; }
-            //$data['apiKey'] = RESTAPYKEY;                    
+             if(!isset($data['user_id'])){ $data['user_id'] = "1"; }
+            $data['apiKey'] = RESTAPYKEY; 
             $data = json_encode($data);
-              curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-          }                    
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $data);      
+
           break;
         case "PUT":
           curl_setopt($curl, CURLOPT_POST, 1);
           curl_setopt($curl, CURLOPT_HTTPHEADER,array('Content-Type: multipart/form-data'));
-          if(!$data['user_id']){ $data['user_id'] = "1"; }
+          if(!isset($data['user_id'])){ $data['user_id'] = "1"; }
           $data['apiKey'] = RESTAPYKEY;                    
           curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
           break;

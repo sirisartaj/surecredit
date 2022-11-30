@@ -115,7 +115,7 @@ class LoanController extends Controller
             ];*/
       // print_r($result);exit;
        if($result){
-        return json_encode(1);
+        return json_encode($result);
        }else{
         return $result;
        }
