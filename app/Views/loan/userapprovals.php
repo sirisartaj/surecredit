@@ -93,8 +93,8 @@ foreach($result as $r){ //print_r($r);?>
 	function Approverejectuser(admin_approved_status,uid){
 		var uemail ='';
 		
-		admin_approved_statustext = admin_approved_status==0?'Approve':'Reject';
-		admin_approved_statuscls = admin_approved_status==0?'btn-primary':'btn-danger';
+		admin_approved_statustext = admin_approved_status?'Reject':'Approve';
+		admin_approved_statuscls = admin_approved_status?'btn-danger':'btn-primary';
 		numadmin_approved_status = admin_approved_status?'0':'1';
 		$.ajax({
 		   method: "POST",		  
