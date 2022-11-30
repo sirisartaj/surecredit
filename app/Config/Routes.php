@@ -37,6 +37,12 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'LoanController::userApplyLoan');
 $routes->get('/userApplyLoan', 'LoanController::userApplyLoan');
+$routes->post('/userApplyLoanstore', 'LoanController::userApplyLoanstore');
+$routes->get('/user_loan_details/(:any)', 'LoanController::user_loan_details/$1');
+$routes->get('/get_loan_by_id/(:any)', 'LoanController::get_loan_by_id/$1');
+$routes->get('/admin_loan_approvals', 'LoanController::get_all_loans');
+
+$routes->post('/approverejectuserloan', 'LoanController::Approve_reject_user_loan');
 
 /*
  * --------------------------------------------------------------------

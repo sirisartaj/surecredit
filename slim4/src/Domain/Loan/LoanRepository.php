@@ -1,10 +1,10 @@
 <?php
-namespace App\Domain\Users;
+namespace App\Domain\Loan;
 use PDO;
 /**
 * Repository.
 */
-class UsersRepository
+class LoanRepository
 {
   /**
    * @var PDO The database connection
@@ -24,18 +24,20 @@ class UsersRepository
    *
    * @return array 
    */
-  public function getUsers(): array
-  {      
+  public function GetLoanById($data): array
+  {   
+
     try {
-      $sql = "SELECT user_id , user_mobile,user_email,user_fname,user_lname,user_gender,user_dob,user_level,user_avatar,user_create,lastlogin,user_status,modified_date, created_by AS createdBy, modified_by AS modifiedBy FROM  sg_users";
+      extract($data);
+      $sql = "SELECT * FROM loans where loan_id='".$loan_id."'";
       $stmt = $this->connection->prepare($sql);  
       $stmt->execute();
-      $users = $stmt->fetchAll(PDO::FETCH_OBJ);
-      if(!empty($users)){
+      $loan = $stmt->fetch(PDO::FETCH_OBJ);
+      if(!empty($loan)){
        $status = array(
          'status' =>ERR_OK,
          'message' =>"Success",
-         'users' => $users);
+         'loan' => $loan);
          return $status;
       }else{
         $status = array('status'=>ERR_NO_DATA,
@@ -50,19 +52,19 @@ class UsersRepository
       return $status;
     }
   }
-  public function getuser($data) {
+  public function get_all_loans() {
     try {
-      extract($data);
-      $sql = "SELECT user_id , user_mobile,user_email,user_fname,user_lname,user_gender,user_dob,user_level,user_avatar,user_create,lastlogin,user_status,modified_date, created_by AS createdBy, modified_by AS modifiedBy FROM ".DBPREFIX."_users WHERE user_id=:user_id";
+      //extract($data);
+      $sql = "SELECT * FROM loans ";
       $stmt = $this->connection->prepare($sql);  
-      $stmt->bindParam(":user_id", $userId); 
+       
       $stmt->execute();
-      $userdetails = $stmt->fetch(PDO::FETCH_OBJ);
-      if(!empty($userdetails)){
+      $details = $stmt->fetchAll(PDO::FETCH_OBJ);
+      if(!empty($details)){
         $status = array(
                   'status' => ERR_OK,
                   'message' => "Success",
-                  'user' => $userdetails);
+                  'loanlist' => $details);
         return $status;
       }else{
         $status = array('status'=>ERR_NO_DATA,
@@ -76,6 +78,37 @@ class UsersRepository
           );
       return $status;
     }
+  }
+  public function approve_reject_user_loan($data){
+
+    try {
+      
+      extract($data);
+      $sql = "UPDATE loans SET admin_approved_status=:admin_approved_status, modified_by=:modified_by,modified_date=:modified_date,approved_date=:modified_date WHERE loan_id = :loan_id";
+      $stmt = $this->connection->prepare($sql);  
+      $stmt->bindParam(":loan_id",$loan_id);
+      $stmt->bindParam(":admin_approved_status", $admin_approved_status);
+      $stmt->bindParam(":modified_by",$modified_by);
+      $stmt->bindParam(":modified_date",$modified_date);
+     $res = $stmt->execute();
+      if($res == 'true'){
+        $status = array(
+          "status" => "200",
+          "message" => "Updated Successfully");
+        return $status;
+      }else{
+        $status = array(
+          "status" => ERR_NOT_MODIFIED,
+          "message" => "Not Updated Successfully");
+        return $status;
+      }
+    } catch(PDOException $e) {
+      $status = array(
+              'status' => "500",
+              'message' => $e->getMessage()
+          );
+      return $status;
+    } 
   }
   public function deleteuser($data) {    
     try {
@@ -102,32 +135,36 @@ class UsersRepository
       return $status;
     } 
   }
-  public function addUser($data) {
+  public function StoreUserLoan($data) {
     try {      
       extract($data);
-      $sql = "INSERT INTO ".DBPREFIX."_users SET user_fname=:user_fname, user_lname=:user_lname ,user_gender=:user_gender,user_mobile=:user_mobile,user_email=:user_email,user_password=:user_password,temp_password=:temp_password,user_dob=:user_dob,user_level=:user_level, user_avatar = :user_avatar,user_create=:user_create,lastlogin=:lastlogin, user_status = :user_status , created_by = :created_by";
+      $sql = "INSERT INTO loans SET user_id=:user_id, loantype=:loantype ,emi_start_date=:emi_start_date,admin_approved_status=:admin_approved_status,days=:days,last_instalment_payeddate=:last_instalment_payeddate,status=:status,processing_fee=:processing_fee,total_amt=:total_amt, principal_amount = :principal_amount,intrest=:intrest,applyed_date=:applyed_date, approved_date = :approved_date , modified_date = :modified_date,modified_by=:modified_by";
       $stmt = $this->connection->prepare($sql);  
       $created_date = date("Y-m-d H:i:s");
-      $stmt->bindParam(":user_fname", $user_fname); 
-      $stmt->bindParam(":user_lname", $user_lname); 
-      $stmt->bindParam(":user_avatar", $user_avatar);
-      $stmt->bindParam(":user_gender", $user_gender);
-      $stmt->bindParam(":user_mobile", $user_mobile);
-      $stmt->bindParam(":user_email", $user_email);
-      $stmt->bindParam(":user_password", $user_password);
-      $stmt->bindParam(":temp_password", $temp_password);
-      $stmt->bindParam(":user_dob", $user_dob);
-      $stmt->bindParam(":user_level", $user_level);
-      $stmt->bindParam(":lastlogin", $lastlogin);
-      $stmt->bindParam(":user_status", $user_status);
-      $stmt->bindParam(':user_create',date('Y-m-d H:i:s'));
-      $stmt->bindParam(':created_by',$user_id);
+      $stmt->bindParam(":user_id", $user_id); 
+      $stmt->bindParam(":loantype", $loantype); 
+      $stmt->bindParam(":emi_start_date", $emi_start_date);
+      $stmt->bindParam(":admin_approved_status", $admin_approved_status);
+      $stmt->bindParam(":days", $days);
+      $stmt->bindParam(":last_instalment_payeddate", $last_instalment_payeddate);
+      $stmt->bindParam(":status", $status);
+      $stmt->bindParam(":processing_fee", $processing_fee);
+      $stmt->bindParam(":total_amt", $total_amt);
+      $stmt->bindParam(":principal_amount", $principal_amount);
+      $stmt->bindParam(":intrest", $intrest);
+      $stmt->bindParam(":applyed_date", $applyed_date);
+      $stmt->bindParam(':approved_date',$approved_date);
+      $stmt->bindParam(':modified_date',$modified_date);
+      $stmt->bindParam(':modified_by',$modified_by);
       $res = $stmt->execute();
-      $user_id = $this->connection->lastInsertId();
-      if($user_id != ''  && $user_id != '0'){
+      $loan_id = $this->connection->lastInsertId();
+      if($loan_id != ''  && $loan_id != '0'){       
+
         $status = array(
           "status" => ERR_OK,
-          "message" => "Added Successfully");
+          "message" => "Added Successfully",
+          "loan_id" =>$loan_id
+        );
         return $status;
       }else{
         //print_r($res);
@@ -144,6 +181,42 @@ class UsersRepository
       return $status;
     } 
   }
+
+  public function store_loan_emis($data){
+
+    try {      
+      extract($data);
+
+    $sql = "INSERT INTO emi_loan SET loan_id=:loan_id, emi_name=:emi_name ,emi_date=:emi_date,principal_amount=:principal_amount,emi_payable_amt=:emi_payable_amt,emi_intrest=:emi_intrest,processing_fee=:processing_fee,due_date=:due_date, status = :status";
+      $stmt = $this->connection->prepare($sql);  
+      $created_date = date("Y-m-d H:i:s");
+      $emi_payable_amt = $principal_amount+$emi_intrest+$processing_fee;
+      $stmt->bindParam(":loan_id", $loan_id); 
+      $stmt->bindParam(":emi_name", $emi_name); 
+      $stmt->bindParam(":emi_date", $emi_date);
+      $stmt->bindParam(":principal_amount", $principal_amount);
+      $stmt->bindParam(":emi_intrest", $emi_intrest);
+      $stmt->bindParam(":processing_fee", $processing_fee);     
+      $stmt->bindParam(":due_date", $due_date);
+      $stmt->bindParam(":status", $status);
+      $res = $stmt->execute();
+      $loan_emi_id = $this->connection->lastInsertId();
+      //return $loan_emi_id;
+      $status = array(
+              'status' => "200",
+              'message' => 'loan emis added'
+          );
+      return $status;
+      } catch(PDOException $e) {
+      $status = array(
+              'status' => "500",
+              'message' => $e->getMessage()
+          );
+      return $status;
+    }
+
+  }
+
   public function updateUser($data) 
   {
     try {

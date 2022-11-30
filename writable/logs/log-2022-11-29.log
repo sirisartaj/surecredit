@@ -48,3 +48,935 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
  5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
  6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 11:59:34 --> Use of undefined constant AI - assumed 'AI' (this will throw an Error in a future version of PHP)
+in APPPATH\Views\loan\userApplyLoan.php on line 121.
+ 1 APPPATH\Views\loan\userApplyLoan.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefined constant AI - assumed \'AI\' (this will throw an Error in a future version of PHP)', 'APPPATH\\Views\\loan\\userApplyLoan.php', 121, [])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\loan\\userApplyLoan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('Loan/userApplyLoan', [], true)
+ 5 APPPATH\Controllers\LoanController.php(26): view('Loan/userApplyLoan')
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->userApplyLoan()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 13:10:03 --> syntax error, unexpected ')'
+in APPPATH\Controllers\LoanController.php on line 69.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\LoanController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\LoanController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\LoanController')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\LoanController')
+ 5 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\LoanController', true)
+ 6 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 13:11:04 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(15): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/treking/slim4/loan/store_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(48): App\Models\LoanModel->store_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->userApplyLoanstore()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 13:26:47 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(15): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/treking/slim4/loan/store_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(48): App\Models\LoanModel->store_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->userApplyLoanstore()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 13:35:56 --> json_decode() expects parameter 1 to be string, array given
+in APPPATH\Models\LoanModel.php on line 23.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'json_decode() expects parameter 1 to be string, array given', 'APPPATH\\Models\\LoanModel.php', 23, [...])
+ 2 APPPATH\Models\LoanModel.php(23): json_decode([...])
+ 3 APPPATH\Controllers\LoanController.php(72): App\Models\LoanModel->store_loan_emis([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->userApplyLoanstore()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 13:41:45 --> Constant RESTAPYKEY already defined
+in APPPATH\Controllers\BaseController.php on line 58.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'Constant RESTAPYKEY already defined', 'APPPATH\\Controllers\\BaseController.php', 58, [...])
+ 2 APPPATH\Controllers\BaseController.php(58): define('RESTAPYKEY', '78e7fc94-0169-4b9a-994d-5e402cfbb01')
+ 3 APPPATH\Models\LoanModel.php(24): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/store_loan_emis', [...])
+ 4 APPPATH\Controllers\LoanController.php(72): App\Models\LoanModel->store_loan_emis([...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->userApplyLoanstore()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 13:43:00 --> Constant RESTAPYKEY already defined
+in APPPATH\Controllers\BaseController.php on line 58.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'Constant RESTAPYKEY already defined', 'APPPATH\\Controllers\\BaseController.php', 58, [...])
+ 2 APPPATH\Controllers\BaseController.php(58): define('RESTAPYKEY', '78e7fc94-0169-4b9a-994d-5e402cfbb01')
+ 3 APPPATH\Models\LoanModel.php(24): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/store_loan_emis', [...])
+ 4 APPPATH\Controllers\LoanController.php(72): App\Models\LoanModel->store_loan_emis([...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->userApplyLoanstore()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 13:59:02 --> syntax error, unexpected '$data' (T_VARIABLE), expecting ')'
+in APPPATH\Controllers\LoanController.php on line 83.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\LoanController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\LoanController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\LoanController')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\LoanController')
+ 5 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\LoanController', true)
+ 6 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:01:41 --> Invalid file: header.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('header.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('header', [], true)
+ 3 APPPATH\Views\loan\userapprovals.php(1): view('header')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\loan\\userapprovals.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('Loan/userapprovals', [], true)
+ 7 APPPATH\Controllers\LoanController.php(89): view('Loan/userapprovals', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->get_all_loans()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:03:24 --> Undefined index: user
+in APPPATH\Views\appheader.php on line 129.
+ 1 APPPATH\Views\appheader.php(129): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user', 'APPPATH\\Views\\appheader.php', 129, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\appheader.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('appheader', [], true)
+ 5 APPPATH\Views\loan\userapprovals.php(15): view('appheader')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\loan\\userapprovals.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('Loan/userapprovals', [], true)
+ 9 APPPATH\Controllers\LoanController.php(89): view('Loan/userapprovals', [...])
+10 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->get_all_loans()
+11 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:04:00 --> Undefined index: user
+in APPPATH\Views\appheader.php on line 129.
+ 1 APPPATH\Views\appheader.php(129): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user', 'APPPATH\\Views\\appheader.php', 129, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\appheader.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('appheader', [], true)
+ 5 APPPATH\Views\loan\userapprovals.php(15): view('appheader')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\loan\\userapprovals.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('Loan/userapprovals', [], true)
+ 9 APPPATH\Controllers\LoanController.php(89): view('Loan/userapprovals', [...])
+10 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->get_all_loans()
+11 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:05:22 --> Undefined index: user
+in APPPATH\Views\appheader.php on line 129.
+ 1 APPPATH\Views\appheader.php(129): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user', 'APPPATH\\Views\\appheader.php', 129, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\appheader.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('appheader', [], true)
+ 5 APPPATH\Views\loan\userapprovals.php(15): view('appheader')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\loan\\userapprovals.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('Loan/userapprovals', [], true)
+ 9 APPPATH\Controllers\LoanController.php(89): view('Loan/userapprovals', [...])
+10 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->get_all_loans()
+11 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+12 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:06:33 --> Undefined index: message
+in APPPATH\Views\loan\userapprovals.php on line 26.
+ 1 APPPATH\Views\loan\userapprovals.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: message', 'APPPATH\\Views\\loan\\userapprovals.php', 26, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\loan\\userapprovals.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('Loan/userapprovals', [], true)
+ 5 APPPATH\Controllers\LoanController.php(89): view('Loan/userapprovals', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->get_all_loans()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:06:51 --> Undefined variable: result
+in APPPATH\Views\loan\userapprovals.php on line 59.
+ 1 APPPATH\Views\loan\userapprovals.php(59): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: result', 'APPPATH\\Views\\loan\\userapprovals.php', 59, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\loan\\userapprovals.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('Loan/userapprovals', [], true)
+ 5 APPPATH\Controllers\LoanController.php(89): view('Loan/userapprovals', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->get_all_loans()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:18:07 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\LoanController.php on line 88.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->get_all_loans()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:19:07 --> Undefined property: stdClass::$user_fname
+in APPPATH\Views\loan\userapprovals.php on line 50.
+ 1 APPPATH\Views\loan\userapprovals.php(50): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$user_fname', 'APPPATH\\Views\\loan\\userapprovals.php', 50, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\loan\\userapprovals.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('Loan/userapprovals', [], true)
+ 5 APPPATH\Controllers\LoanController.php(91): view('Loan/userapprovals', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->get_all_loans()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:44:18 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(101): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:44:18 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 14:49:08 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:49:08 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 14:49:59 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:49:59 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 14:50:45 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:50:45 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 14:51:56 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:51:56 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 14:53:47 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:53:47 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 14:54:14 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:54:14 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 14:54:43 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:54:43 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 14:57:53 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:57:53 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 14:58:19 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:58:19 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 14:59:09 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 14:59:09 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:01:06 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:01:06 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:01:44 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:01:44 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:03:25 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:03:25 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:04:58 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:04:58 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:07:51 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:07:51 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:08:05 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:08:05 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:08:15 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:08:15 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:08:20 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:08:20 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:09:34 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:09:34 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:10:44 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:10:44 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:11:53 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:11:53 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:12:05 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:12:05 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:13:03 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:13:03 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:13:41 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/store_loan_emis', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:13:41 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:15:13 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:15:13 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:17:20 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:17:20 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:22:46 --> json_decode() expects parameter 1 to be string, array given
+in APPPATH\Controllers\LoanController.php on line 103.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'json_decode() expects parameter 1 to be string, array given', 'APPPATH\\Controllers\\LoanController.php', 103, [...])
+ 2 APPPATH\Controllers\LoanController.php(103): json_decode([...])
+ 3 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 4 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:23:10 --> Illegal string offset 'user_id'
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'user_id\'', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', '{"loan_id":"1","admin_approved_status":"0","modified_by":"1","modified_date":"2022-11-29 15:23:10"}')
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan('{"loan_id":"1","admin_approved_status":"0","modified_by":"1","modified_date":"2022-11-29 15:23:10"}')
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:23:10 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:25:00 --> Constant RESTAPYKEY already defined
+in APPPATH\Controllers\BaseController.php on line 58.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'Constant RESTAPYKEY already defined', 'APPPATH\\Controllers\\BaseController.php', 58, [...])
+ 2 APPPATH\Controllers\BaseController.php(58): define('RESTAPYKEY', '78e7fc94-0169-4b9a-994d-5e402cfbb01')
+ 3 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 4 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:25:14 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:25:14 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 15:25:36 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 15:25:36 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 22:07:17 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 22:07:17 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 22:11:31 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 22:11:31 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 22:15:32 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 22:15:32 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 22:17:17 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 22:17:17 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 22:18:21 --> Undefined index: user_id
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: user_id', 'APPPATH\\Controllers\\BaseController.php', 65, [...])
+ 2 APPPATH\Models\LoanModel.php(42): App\Controllers\BaseController->CallAPI('POST', 'http://localhost/surecredit/slim4/loan/Approve_reject_user_loan', [...])
+ 3 APPPATH\Controllers\LoanController.php(103): App\Models\LoanModel->Approve_reject_user_loan([...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->Approve_reject_user_loan()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 22:18:21 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\surecredit\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\surecredit\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\surecredit\system\Debug\Exceptions.php(133): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-11-29 23:13:42 --> syntax error, unexpected '{'
+in APPPATH\Controllers\LoanController.php on line 104.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\LoanController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\LoanController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\LoanController')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\LoanController')
+ 5 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\LoanController', true)
+ 6 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 23:14:08 --> syntax error, unexpected '{'
+in APPPATH\Controllers\LoanController.php on line 104.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\LoanController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\LoanController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\LoanController')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\LoanController')
+ 5 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\LoanController', true)
+ 6 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 23:14:34 --> syntax error, unexpected ':', expecting ']'
+in APPPATH\Controllers\LoanController.php on line 105.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\LoanController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\LoanController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\LoanController')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\LoanController')
+ 5 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\LoanController', true)
+ 6 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-11-29 23:51:16 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 845.
+ 1 SYSTEMPATH\Model.php(587): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(764): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\LoanController.php(97): CodeIgniter\Model->__call('get_loan_by_id', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\LoanController->get_loan_by_id('1')
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoanController))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

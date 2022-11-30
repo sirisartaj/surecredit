@@ -4,84 +4,54 @@ use CodeIgniter\Model;
 use App\Controllers\Home;
   
 class LoanModel extends Model{
-    protected $table = 'sg_users';
-    protected $primaryKey = 'user_id';
     
-    protected $allowedFields = [
-        'user_mobile',
-        'user_email',
-        'user_password',
-        'temp_password',
-        'user_fname',
-        'user_lname',
-        'user_gender',
-        'user_dob',
-        'user_level',
-        'user_avatar',
-        'user_create',
-        'lastlogin',
-        'user_status',
-        'modified_date',
-        'created_by',
-        'modified_by'
-    ];
 
-    public function home(){
+    public function store_user_loan($data){
        
         $home = new home();
-        $data = array('banner_title'=>"first banner");
-        $url = baseURL1.'/banners/addbanner';//exit;
+       
+        $url = baseURL1.'/loan/store_user_loan';//exit;
 
        return $home->CallAPI('POST',$url,$data);
       
     }
-
-    public function adduser($data){
-
-         $home = new home();   
-         //print_r($data);echo "in codeigniter usermodel";exit;    
-        $url = baseURL1.'/users/adduser';
-        return $home->CallAPI('POST',$url,$data);
+    public function store_loan_emis($data){
        
-    }
-    public function changepwd($data){
-
-         $home = new home();   
-         //print_r($data);echo "in codeigniter usermodel";exit;    
-        $url = baseURL1.'/users/updateuserpassword';
-        return $home->CallAPI('POST',$url,$data);
+        $home = new home();
        
-    } 
-
-    public function edituser($data){
-
-        $home = new home();       
-        $url = baseURL1.'/users/updateuser';
-        return $home->CallAPI('POST',$url,$data);
-       
-    } 
-    public function getuser($user_id){
-
-        $home = new home();  
-        $data = array();     
-        $url = baseURL1.'/users/getuser/'.$user_id;
-        return $home->CallAPI('GET',$url,$data);
-       
-    }
-
-    public function signinuser($data){
-
-         $home = new home();
-       
-        $url = baseURL1.'/users/checklogin';
+        $url = baseURL1.'/loan/store_loan_emis';//exit;
 
        return $home->CallAPI('POST',$url,$data);
+      
+    }
+    public function get_all_loans(){
+       
+        $home = new home();
+       $data=array();
+        $url = baseURL1.'/loan/get_all_loans';//exit;
+
+       return $home->CallAPI('GET',$url,$data);
+      
+    }
+    public function get_loan_by_id($lid){
+       
+        $home = new home();
+       $data=array();
+        $url = baseURL1.'/loan/get_loan_by_id/'.$lid;//exit;
+
+       return $home->CallAPI('GET',$url,$data);
+      
+    }
+    public function Approve_reject_user_loan($data){
+       
+        $home = new home();
+      // print_r(json_encode($data));
+       echo $url = baseURL1.'/loan/Approve_reject_user_loan';//exit;
+
+        $result = $home->CallAPI('POST',$url,$data);
+       print_r($result);exit;
+      
     }
 
-    public function getusers(){
-        $home = new home();  
-        $data = array();     
-        $url = baseURL1.'/users/getusers';
-        return $home->CallAPI('GET',$url,$data);
-    }
+    
 }
