@@ -136,10 +136,16 @@ class LoanRepository
     } 
   }
   public function StoreUserLoan($data) {
-    try {      
+    try { 
+    //print_r($data);exit;     
       extract($data);
-      $sql = "INSERT INTO loans SET user_id=:user_id, loantype=:loantype ,emi_start_date=:emi_start_date,admin_approved_status=:admin_approved_status,days=:days,last_instalment_payeddate=:last_instalment_payeddate,status=:status,processing_fee=:processing_fee,total_amt=:total_amt, principal_amount = :principal_amount,intrest=:intrest,applyed_date=:applyed_date, approved_date = :approved_date , modified_date = :modified_date,modified_by=:modified_by";
-      $stmt = $this->connection->prepare($sql);  
+      if($loan_id){
+        $sql  = "UPDATE loans SET user_id=:user_id, loantype=:loantype ,emi_start_date=:emi_start_date,admin_approved_status=:admin_approved_status,days=:days,last_instalment_payeddate=:last_instalment_payeddate,status=:status,processing_fee=:processing_fee,total_amt=:total_amt, principal_amount = :principal_amount,intrest=:intrest,applyed_date=:applyed_date, approved_date = :approved_date , modified_date = :modified_date,modified_by=:modified_by WHERE loan_id = ".$loan_id;   
+      $stmt = $this->connection->prepare($sql);
+      }else{
+        $sql = "INSERT INTO loans SET user_id=:user_id, loantype=:loantype ,emi_start_date=:emi_start_date,admin_approved_status=:admin_approved_status,days=:days,last_instalment_payeddate=:last_instalment_payeddate,status=:status,processing_fee=:processing_fee,total_amt=:total_amt, principal_amount = :principal_amount,intrest=:intrest,applyed_date=:applyed_date, approved_date = :approved_date , modified_date = :modified_date,modified_by=:modified_by";
+        $stmt = $this->connection->prepare($sql);  
+      }
       $created_date = date("Y-m-d H:i:s");
       $stmt->bindParam(":user_id", $user_id); 
       $stmt->bindParam(":loantype", $loantype); 
@@ -157,6 +163,15 @@ class LoanRepository
       $stmt->bindParam(':modified_date',$modified_date);
       $stmt->bindParam(':modified_by',$modified_by);
       $res = $stmt->execute();
+        
+      if($loan_id){
+        $status = array(
+          "status" => ERR_OK,
+          "message" => "Updated Successfully",
+          "loan_id" =>$loan_id
+        );
+        return $status;
+      }
       $loan_id = $this->connection->lastInsertId();
       if($loan_id != ''  && $loan_id != '0'){       
 
@@ -195,6 +210,7 @@ class LoanRepository
       $stmt->bindParam(":emi_name", $emi_name); 
       $stmt->bindParam(":emi_date", $emi_date);
       $stmt->bindParam(":principal_amount", $principal_amount);
+      $stmt->bindParam(":emi_payable_amt", $emi_payable_amt);
       $stmt->bindParam(":emi_intrest", $emi_intrest);
       $stmt->bindParam(":processing_fee", $processing_fee);     
       $stmt->bindParam(":due_date", $due_date);

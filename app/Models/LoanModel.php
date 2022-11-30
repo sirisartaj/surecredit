@@ -18,8 +18,8 @@ class LoanModel extends Model{
     public function store_loan_emis($data){
        
         $home = new home();
-       
-        $url = baseURL1.'/loan/store_loan_emis';//exit;
+       //print_r(json_encode($data));
+      $url = baseURL1.'/loan/store_loan_emis';//exit;
 
        return $home->CallAPI('POST',$url,$data);
       

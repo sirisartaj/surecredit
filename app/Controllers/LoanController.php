@@ -45,6 +45,10 @@ class LoanController extends Controller
                         
 
         );
+        if($this->request->getVar('loan_id')){
+            $data['loan_id'] = $this->request->getVar('loan_id');
+        }
+        //print_r($data);exit;
         $LoanModel = new LoanModel;
         $loan =(array) $LoanModel->store_user_loan($data);
         //print_r($loan);exit;
@@ -66,12 +70,15 @@ class LoanController extends Controller
                         'principal_amount'=>$emi_principal_amount[$k],
                         'user_id'=>"1"
                         );
-            $loanemis = $LoanModel->store_loan_emis($data1);
+            //print_r($data1);
+            $loanemis =(array) $LoanModel->store_loan_emis($data1);
+           // print_r($loanemis);
         }
-        if($loan){
+        
+        if($loan['message']=='Updated Successfully'){
             
-            
-           // print_r($loanemis);//exit;
+            return redirect()->to('admin_loan_approvals');
+           
         }
         return redirect()->to('userApplyLoan');
 

@@ -1,8 +1,6 @@
 <?php echo view('header'); ?>
 <!-- BACK-TO-TOP -->
-		<a href="https://vyz.bz/ridingsolo_admin/#top" id="back-to-top"><i class="fa fa-long-arrow-up"></i></a>
-
-		
+		<a href="https://vyz.bz/ridingsolo_admin/#top" id="back-to-top"><i class="fa fa-long-arrow-up"></i></a>	
 
 		<!-- JQUERY JS -->
 		<script src="https://vyz.bz/ridingsolo_admin/assets/js/jquery.min.js"></script>
@@ -34,12 +32,15 @@
 		<form class="row" action="<?php echo base_url().'/userApplyLoanstore'?>" method="post">
 			<input type="hidden" name="loan_id" value="<?php echo $result['loan_id']; ?>">
 			
+			
+			<input name="loanamt_actuval" value="" id="input_loanamt" type="hidden" />
+			
 	<div class="form-group col-6">
-	Loan amount <input name="principal_amount" id="myRange" value="<?php echo $result['principal_amount']; ?>" onChange="rangechanged();" class="form-control" type="text">
+	Loan amount <input name="loanamount" id="myRange" value="<?php echo $result['principal_amount']; ?>" onChange="rangechanged();" class="form-control" type="text">
 </div>
-<div class="row">
+<div class="row" style="display: none;">
                                     <!-- col -->
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-6" >
                                         <div class="form-check form-check-inline border p-3 d-block">
                                             <input class="form-check-input ms-2 me-3" type="radio" name="loantype" id="inlineRadio1" value="option1">
                                             <label class="form-check-label" for="inlineRadio1">EMI for 95 Days (3 Months & 5 days) </label>
@@ -69,17 +70,20 @@
 
 
 
-
-
-	<div class="form-control">totamt<span id="totamt"></span></div>
-	<div class="form-control">processing_fee_text<span id="processing_fee_text"></span> <span id="processing_fee"></span><input type="hidden" name="input_processing_fee" id="input_processing_fee" value=""></div>
-	<div class="form-control">preclosure<span id="preclosure"></span></div>
-	<div class="form-control"><input type="hidden" name="input_loanamt" id="input_loanamt" value=""></div>
-	<div class="form-control"></div>
+<div style="clear:both;"></div>
+<input name="tpayableamt" value="" id="input_tpayableamt" type="hidden" />
+	<div class="form-group col-4">totamt <input id="totamt" class="form-control ">
+		<input type="hidden" name="input_loanamt" id="input_loanamt"  class="form-control col-lg-2">
+	</div>
+	<div class="form-group col-4">processing_fee <span id="processing_fee_text" ></span><input id="processing_fee" class="form-control" /> <input type="hidden" name="processing_fee" id="input_processing_fee" value=""></div>
+	<div class="form-group col-4">preclosure<input id="preclosure" class="form-control" /></div>
+	<!-- <div class="form-group col-6">
+		Total Payable<input type="" name="" id="tpayableamt">
+	</div> -->
 <div class="col-sm-6" id="tpayableamt"></div>
 <div class="col-sm-6" id="monthlyemi"></div>
 <div class="col-sm-6" id="intrest"></div>
-<input type="text" name="" id="input_tpayableamt">
+<div class="form-group col-4"> Total Payable<input type="text" name="" id="input_tpayableamt"></div>
 
 <div><button type="submit" class="btn btn-primary">Update</button></div>
 </form>
@@ -112,13 +116,13 @@
        
         
 
-        $('#totamt').html(loanamt);
+        $('#totamt').val(loanamt);
         $('#input_loanamt').val(loanamt);
        // loanamt* 10/100;
         $('#processing_fee_text').html("10% : ");
         $('#input_processing_fee').val(processing_fee_amt);
-        $('#processing_fee').html(processing_fee_amt);
-        $('#preclosure').html("Rs."+(parseInt(loanamt)+parseInt(loanamt * 0.035)+parseInt(processing_fee_amt)));
+        $('#processing_fee').val(processing_fee_amt);
+        $('#preclosure').val("Rs."+(parseInt(loanamt)+parseInt(loanamt * 0.035)+parseInt(processing_fee_amt)));
 
         if(loanamt< 7000){
             //third radio
@@ -139,7 +143,7 @@
             var payableamt = (parseInt(loanamt)+parseInt(loanamt * intrestdays)+parseInt(processing_fee_amt));
              $('#tpayableamt').html("Rs. "+payableamt);
              $('#input_tpayableamt').val(payableamt);
-            var str = '<tr><td><input name="emi_principal_amount[]" type="hidden" value="'+loanamt+'"/><input type="hidden" name="emi_intrest[]" value="'+loanamt * intrestdays+'" /><input type="hidden" name="processing_fee_amt[]" value="'+processing_fee_amt+'"><input type="hidden" name="intrest" value="3.5%"/><input type="radio"><span class="d-inline-block ps-2"  id="inlineRadio3" value="">First Month</span></td><td><label for="inlineRadio3">Rs:'+payableamt+'</label><input type="hidden" name="payableamt[]" value="'+payableamt+'"></td><td><input name="emiduedate[]" value="'+emidate+'" >'+emidate+'</td></tr>';
+            var str = '<tr><td><input name="emi_principal_amount[]" type="hidden" value="'+loanamt+'"/><input type="hidden" name="emi_intrest[]" value="'+loanamt * intrestdays+'" /><input type="hidden" name="processing_fee_amt[]" value="'+processing_fee_amt+'"><input type="hidden" name="intrest" value="3.5%"/></td><td><label for="">Rs:'+payableamt+'</label><input type="hidden" name="payableamt[]" value="'+payableamt+'"></td><td><input name="emiduedate[]" value="'+emidate+'" class="form-control datepicker" type="hidden" >'+emidate+'</td></tr>';
             $('#monthlyemi').html(str);
             $('#intrest').html('3.5%');
 
@@ -178,7 +182,7 @@
             emidate3.setDate(emidate3.getDate() + 95);
             emidate3 = dateformateymd(emidate3);
 
-            var str = '<tr><td><input name="emi_principal_amount[]" type="hidden" value="'+split1+'"/><input name="emi_principal_amount[]" type="hidden" value="'+split2+'"/><input name="emi_principal_amount[]" type="hidden" value="'+split3+'"/><input type="hidden" name="emi_intrest[]" value="'+loanamt * intrest+'" /><input type="hidden" name="processing_fee_amt[]" value="'+processing_fee_amt+'"><input type="hidden" name="intrest" value="2.5%"/><input name="days" type="hidden" value="95" /><input type="radio"><span class="d-inline-block ps-2"  name="inlineRadioOptions" id="inlineRadio3" value="option1">First Month</span></td><td><label for="inlineRadio3">Rs:'+payableamt1+'</label><input type="hidden" name="payableamt[]" value="'+payableamt1+'"></td><td><input name="emiduedate[]" value="'+emidate+'" class="form-control datepicker">'+emidate+'</td></tr><tr><td><input type="hidden" name="emi_intrest[]" value="'+loanamt * intrest+'" /><input type="hidden" name="processing_fee_amt[]" value="0"><input type="radio"><span class="d-inline-block ps-2"  name="inlineRadioOptions" id="inlineRadio3" value="option1">second Month</span></td><td><label for="inlineRadio3">Rs:'+payableamt2+'</label><input type="hidden" name="payableamt[]" value="'+payableamt2+'"></td><td><input name="emiduedate[]" value="'+emidate2+'"  class="form-control datepicker">'+emidate2+'</td></tr><tr><td><input type="hidden" name="emi_intrest[]" value="'+loanamt * intrestdays+'" /><input type="hidden" name="processing_fee_amt[]" value="0"><input type="radio"><span class="d-inline-block ps-2"  name="inlineRadioOptions" id="inlineRadio3" value="option1">Third Month</span></td><td><label for="inlineRadio3">Rs:'+payableamt3+'</label><input type="hidden" name="payableamt[]" value="'+payableamt3+'"></td><td><input name="emiduedate[]" value="'+emidate3+'"  class="form-control datepicker" >'+emidate3+'</td></tr>';
+            var str = '<tr><td><input name="emi_principal_amount[]" type="hidden" value="'+split1+'"/><input name="emi_principal_amount[]" type="hidden" value="'+split2+'"/><input name="emi_principal_amount[]" type="hidden" value="'+split3+'"/><input type="hidden" name="emi_intrest[]" value="'+Math.round(loanamt * intrest)+'" /><input type="hidden" name="processing_fee_amt[]" value="'+processing_fee_amt+'"><input type="hidden" name="intrest" value="2.5%"/><input name="days" type="hidden" value="95" /></td><td><label for="inlineRadio3">Rs:'+Math.round(payableamt1)+'</label><input type="hidden" name="payableamt[]" value="'+Math.round(payableamt1)+'"></td><td><input name="emiduedate[]" value="'+emidate+'" class="form-control datepicker" type="hidden">'+emidate+'</td></tr><tr><td><input type="hidden" name="emi_intrest[]" value="'+Math.round(loanamt * intrest)+'" /><input type="hidden" name="processing_fee_amt[]" value="0"><input type="radio"><span class="d-inline-block ps-2"  name="inlineRadioOptions" id="inlineRadio3" value="option1">second Month</span></td><td><label for="inlineRadio3">Rs:'+payableamt2+'</label><input type="hidden" name="payableamt[]" value="'+payableamt2+'"></td><td><input name="emiduedate[]" value="'+emidate2+'"  class="form-control datepicker" type="hidden">'+emidate2+'</td></tr><tr><td><input type="hidden" name="emi_intrest[]" value="'+Math.round(loanamt * intrestdays)+'" /><input type="hidden" name="processing_fee_amt[]" value="0"></td><td><label for="inlineRadio3">Rs:'+payableamt3+'</label><input type="hidden" name="payableamt[]" value="'+payableamt3+'"></td><td><input name="emiduedate[]" value="'+emidate3+'"  class="form-control datepicker" type="hidden"> <div class="text-right">'+emidate3+'</div></td></tr>';
             $('#monthlyemi').html(str);
             $('#tpayableamt').html("Rs. "+parseInt(payableamt1+payableamt2+payableamt3));
             $('#input_tpayableamt').val(parseInt(payableamt1+payableamt2+payableamt3));
@@ -207,7 +211,7 @@
             emidate2 = dateformateymd(emidate2);
 
 
-            var str = '<tr><td><input name="emi_principal_amount[]" type="hidden" value="'+split1+'"/><input name="emi_principal_amount[]" type="hidden" value="'+split2+'"/><input type="hidden" name="emi_intrest[]" value="'+loanamt * intrest+'" /><input type="hidden" name="processing_fee_amt[]" value="'+processing_fee_amt+'"><input type="hidden" name="intrest" value="2.5%"/><input name="days" value="65" type="hidden"><input type="radio"><span class="d-inline-block ps-2"  name="inlineRadioOptions" id="inlineRadio3" value="option1">First Month</span></td><td><label for="inlineRadio3">Rs:'+payableamt1+'</label><input type="hidden" name="payableamt[]" value="'+payableamt1+'"></td><td><input name="emiduedate[]" value="'+emidate+'" >'+emidate+'</td></tr><tr><td><input type="hidden" name="emi_intrest[]" value="'+loanamt * intrestdays+'"><input type="hidden" name="processing_fee_amt[]" value="0"><input type="radio"><span class="d-inline-block ps-2"  name="inlineRadioOptions" id="inlineRadio3" value="option1">Second Month</span></td><td><label for="inlineRadio3">Rs:'+payableamt2+'</label><input type="hidden" name="payableamt[]" value="'+payableamt2+'"></td><td><input name="emiduedate[]" value="'+emidate2+'" >'+emidate2+'</td></tr>';
+            var str = '<tr><td><input name="emi_principal_amount[]" type="hidden" value="'+split1+'"/><input name="emi_principal_amount[]" type="hidden" value="'+split2+'"/><input type="hidden" name="emi_intrest[]" value="'+loanamt * intrest+'" /><input type="hidden" name="processing_fee_amt[]" value="'+processing_fee_amt+'"><input type="hidden" name="intrest" value="2.5%"/><input name="days" value="65" type="hidden"><input type="radio"><span class="d-inline-block ps-2"  name="inlineRadioOptions" id="inlineRadio3" value="option1">First Month</span></td><td><label for="inlineRadio3">Rs:'+payableamt1+'</label><input type="hidden" name="payableamt[]" value="'+payableamt1+'"></td><td><input name="emiduedate[]" value="'+emidate+'" class="form-control datepicker" type="hidden">'+emidate+'</td></tr><tr><td><input type="hidden" name="emi_intrest[]" value="'+loanamt * intrestdays+'"><input type="hidden" name="processing_fee_amt[]" value="0"><input type="radio"><span class="d-inline-block ps-2"  name="inlineRadioOptions" id="inlineRadio3" value="option1">Second Month</span></td><td><label for="inlineRadio3">Rs:'+payableamt2+'</label><input type="hidden" name="payableamt[]" value="'+payableamt2+'"></td><td><input name="emiduedate[]" value="'+emidate2+'" class="form-control datepicker" type="hidden"> <div class="form-control">'+emidate2+'</div></td></tr>';
             $('#monthlyemi').html(str);
             $('#tpayableamt').html("Rs. "+parseInt(payableamt1+payableamt2));
             $('#input_tpayableamt').val(parseInt(payableamt1+payableamt2));
